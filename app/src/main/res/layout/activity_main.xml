@@ -3,7 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/lvMain"
+    android:id="@+id/main_Lv"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -118,14 +118,14 @@
         android:layout_weight="0.5"
         android:orientation="horizontal"
         android:weightSum="1">
-        <!--MATERIAL EDITTEXT -->
+
         <EditText
             android:id="@+id/my_customDice"
             android:layout_width="99dp"
             android:layout_height="65dp"
             android:layout_weight="0.7"
             android:inputType="number"></EditText>
-        <!--MATERIAL BUTTON -->
+
         <Button
             android:id="@+id/addBtn"
             android:layout_width="143dp"

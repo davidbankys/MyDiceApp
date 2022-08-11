@@ -36,10 +36,10 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     Spinner dPicker;
-    Integer[] arrChooseDiceSide = {4, 6, 8, 10, 12, 20};
+    Integer[] arrPickDiceSide = {4, 6, 8, 10, 12, 20};
     EditText my_customDice;
     Button addBtn, btnROnce, btnRTwice;
-    LinearLayout lvMain;
+    LinearLayout main_Lv;
     ArrayList<String> arrListViewArray;
     ListView saved_List;
     TextView first_roll, second_roll;
@@ -55,13 +55,13 @@ public class MainActivity extends AppCompatActivity {
         second_roll = findViewById(R.id.second_roll);
         saved_List = findViewById(R.id.saved_List);
         first_roll = findViewById(R.id.first_roll);
-        lvMain = findViewById(R.id.lvMain);
+        main_Lv = findViewById(R.id.main_Lv);
         btnROnce = findViewById(R.id.btnROnce);
         btnRTwice = findViewById(R.id.btnRTwice);
 
         //initate Shared Pref
         SharedPrefManager.init(MainActivity.this);
-        setSpinnerData(arrChooseDiceSide);
+        setSpinnerData(arrPickDiceSide);
         arrListViewArray = new ArrayList<>();
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,17 +69,17 @@ public class MainActivity extends AppCompatActivity {
                 //adding new array element to spinner
                 String strNewCustomSide = my_customDice.getText().toString().trim();
                 if (!strNewCustomSide.equalsIgnoreCase("")) {
-                    Integer arrNewSide[] = new Integer[arrChooseDiceSide.length + 1];
-                    for (int i = 0; i < arrChooseDiceSide.length; i++) {
+                    Integer arrNewSide[] = new Integer[arrPickDiceSide.length + 1];
+                    for (int i = 0; i < arrPickDiceSide.length; i++) {
                         //Copy element from old array to new array
-                        arrNewSide[i] = arrChooseDiceSide[i];
+                        arrNewSide[i] = arrPickDiceSide[i];
                     }
                     arrNewSide[arrNewSide.length - 1] = Integer.parseInt(strNewCustomSide);
                     //sorting array
                     Arrays.sort(arrNewSide);
                     //copy new array to old array
-                    arrChooseDiceSide = Arrays.copyOf(arrNewSide, arrNewSide.length);
-                    setSpinnerData(arrChooseDiceSide);
+                    arrPickDiceSide = Arrays.copyOf(arrNewSide, arrNewSide.length);
+                    setSpinnerData(arrPickDiceSide);
                     Toast.makeText(MainActivity.this, "Your custom Dice " + strNewCustomSide + " is added to dropdown", Toast.LENGTH_SHORT).show();
                     my_customDice.setText("");
                 }
