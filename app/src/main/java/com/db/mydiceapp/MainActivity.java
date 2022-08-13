@@ -35,8 +35,8 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
-    Spinner d_Picker;
     Integer[] arrPickDiceSide = {4, 6, 8, 10, 12, 20};
+    Spinner d_Picker;
     EditText my_customDice;
     Button addBtn, btnROnce, btnRTwice;
     LinearLayout main_Lv;

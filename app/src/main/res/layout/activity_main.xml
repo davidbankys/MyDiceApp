@@ -77,8 +77,10 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="0.5"
+                    android:background="@color/secondaryDarkColor"
+                    android:backgroundTint="#DF6F6F"
                     android:text="@string/roll_once"
-                    android:textColor="@color/white"></Button>
+                    android:textColor="@color/white"/>
                 <Button
                     android:id="@+id/btnRTwice"
                     android:layout_width="0dp"
@@ -90,7 +92,7 @@
                     android:textColor="@color/white"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                   ></Button>
+                   />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
