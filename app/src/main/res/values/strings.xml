@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MyDiceApp</string>
+    <string name="roll_once">Roll once</string>
+    <string name="roll_twice">Roll Twice</string>
+    <string name="add">Add+</string>
+    <string name="first_dice">First Dice</string>
+    <string name="second_dice">Second Dice</string>
 </resources>

@@ -35,7 +35,7 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
-    Spinner dPicker;
+    Spinner d_Picker;
     Integer[] arrPickDiceSide = {4, 6, 8, 10, 12, 20};
     EditText my_customDice;
     Button addBtn, btnROnce, btnRTwice;
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         my_customDice = findViewById(R.id.my_customDice);
-        dPicker = findViewById(R.id.dPicker);
+        d_Picker = findViewById(R.id.d_Picker);
         addBtn = findViewById(R.id.addBtn);
         second_roll = findViewById(R.id.second_roll);
         saved_List = findViewById(R.id.saved_List);
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 second_roll.setText("");
-                String stID = dPicker.getSelectedItem().toString();
+                String stID = d_Picker.getSelectedItem().toString();
                 Dice d = new Dice(Integer.parseInt(stID));
                 second_roll.setVisibility(View.GONE);
                 diceResultBeforeAndAfter(d, 1);
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         btnRTwice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String stID = dPicker.getSelectedItem().toString();
+                String stID = d_Picker.getSelectedItem().toString();
                 Dice d = new Dice(Integer.parseInt(stID));
                 second_roll.setVisibility(View.VISIBLE);
                 diceResultBeforeAndAfter(d, 2);
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
     private void setSpinnerData(Integer[] arrChooseSide) {
         ArrayAdapter<Integer> spinnerArrayAdapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_dropdown_item_1line, arrChooseSide);
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line); // The drop down view
-        dPicker.setAdapter(spinnerArrayAdapter);
+        d_Picker.setAdapter(spinnerArrayAdapter);
     }
 
     private void diceResultBeforeAndAfter(Dice dice, int i) {

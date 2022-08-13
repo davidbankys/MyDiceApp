@@ -21,28 +21,7 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:weightSum="1">
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.5"
-                android:orientation="horizontal"
-                android:weightSum="1">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:text="First Dice"
-                    android:textSize="20sp"></TextView>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:text="Second Dice"
-                    android:textSize="20sp"></TextView>
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -55,14 +34,19 @@
                     android:id="@+id/first_roll"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.5"></TextView>
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:textAlignment="center"
+                    android:textSize="30sp"></TextView>
 
                 <TextView
                     android:id="@+id/second_roll"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_weight="0.5"
-                   ></TextView>
+                    android:textAlignment="center"
+                    android:textSize="30sp"></TextView>
 
             </LinearLayout>
         </LinearLayout>
@@ -73,7 +57,7 @@
             android:orientation="vertical"
             android:weightSum="1">
             <Spinner
-                android:id="@+id/dPicker"
+                android:id="@+id/d_Picker"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.4"
@@ -85,30 +69,28 @@
                 android:layout_weight="0.5"
                 android:orientation="horizontal"
                 android:weightSum="1">
+
                 <Button
                     android:id="@+id/btnROnce"
+                    style="@style/Button"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="0.5"
-                    android:text="Roll once"
-                    android:textColor="@color/white"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    app:iconGravity="textStart"
-                    />
+                    android:text="@string/roll_once"
+                    android:textColor="@color/white"></Button>
                 <Button
                     android:id="@+id/btnRTwice"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="0.5"
-                    android:text="Roll Twice"
+                    style="@style/Button"
+                    android:text="@string/roll_twice"
                     android:textColor="@color/white"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    app:iconGravity="textStart"
-                    />
+                   ></Button>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -133,7 +115,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_weight="0.3"
-            android:text="Add+"
+            android:text="@string/add"
             android:textColor="@color/white"
             app:iconGravity="textStart" />
     </LinearLayout>
